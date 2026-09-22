@@ -24,17 +24,37 @@
     <!-- Dependency management for all modules -->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.cal2crm.core</groupId>
+                <artifactId>core-parent</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>com.cal2crm.storage</groupId>
+                <artifactId>storage-parent</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <modules>
         <module>core/core-api</module>
+        <module>core/core-spi</module>
+        <module>core/core-engine</module>
+        <module>core/canonical-api</module>
+        <module>core/canonical-model</module>
+        <module>core/canonical-mapping</module>
+        <module>core/unified-api</module>
+        <module>core/unified-model</module>
+        <module>storage/storage-api</module>
+        <module>storage/storage-postgres</module>
     </modules>
 
     <build>
         <pluginManagement>
             <plugins>
-                <!-- Compiler plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
